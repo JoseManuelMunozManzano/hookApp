@@ -3,23 +3,23 @@
 import { useState } from 'react';
 
 export const useCounter = (initialState = 10) => {
-  const [state, setState] = useState(initialState); // 10
+  const [counter, setCounter] = useState(initialState); // 10
 
   const increment = (factor = 1) => {
-    setState(state + factor);
+    setCounter(counter + factor);
   };
 
   const decrement = (factor = 1) => {
-    setState(state - factor);
+    setCounter(counter - factor);
   };
 
   const reset = () => {
-    setState(initialState);
+    setCounter(initialState);
   };
 
   // El customHook está extrayendo la lógica del contador
   return {
-    state,
+    counter,
     increment,
     decrement,
     reset,
