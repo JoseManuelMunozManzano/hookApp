@@ -11,7 +11,8 @@ import ReactDOM from 'react-dom';
 //import { LayoutEffect } from './components/05-useLayoutEffect/LayoutEffect';
 //import { Memorize } from './components/06-memos/Memorize';
 //import { MemoHook } from './components/06-memos/MemoHook';
-import { CallbackHook } from './components/06-memos/CallbackHook';
+//import { CallbackHook } from './components/06-memos/CallbackHook';
+import { Padre } from './components/07-tarea-memo/Padre';
 
 //ReactDOM.render(<HookApp />, document.getElementById('root'));
 //ReactDOM.render(<CounterApp />, document.getElementById('root'));
@@ -24,4 +25,5 @@ import { CallbackHook } from './components/06-memos/CallbackHook';
 //ReactDOM.render(<LayoutEffect />, document.getElementById('root'));
 //ReactDOM.render(<Memorize />, document.getElementById('root'));
 //ReactDOM.render(<MemoHook />, document.getElementById('root'));
-ReactDOM.render(<CallbackHook />, document.getElementById('root'));
+//ReactDOM.render(<CallbackHook />, document.getElementById('root'));
+ReactDOM.render(<Padre />, document.getElementById('root'));
