@@ -4,19 +4,8 @@ import { useForm } from '../../hooks/useForm';
 
 import './styles.css';
 
-// El init ayuda a computar el estado inicial y que no se esté ejecutando cada vez que
-// hay cambios.
 const init = () => {
-  // Leyendo localStorage
   return JSON.parse(localStorage.getItem('todos')) || [];
-
-  // return [
-  //   {
-  //     id: new Date().getTime(),
-  //     desc: 'Aprender React',
-  //     done: false,
-  //   },
-  // ];
 };
 
 export const TodoApp = () => {
@@ -26,10 +15,20 @@ export const TodoApp = () => {
     description: '',
   });
 
-  // Se quiere grabar en localStorage cuando los todo cambian
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
   }, [todos]);
+
+  const handleDelete = todoId => {
+    // Crear la action
+    const action = {
+      type: 'delete',
+      payload: todoId,
+    };
+
+    // Dispatch
+    dispatch(action);
+  };
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -72,7 +71,12 @@ export const TodoApp = () => {
                 <p className="text-center">
                   {i + 1}. {todo.desc}
                 </p>
-                <button className="btn btn-danger">Borrar</button>
+                <button
+                  className="btn btn-danger"
+                  onClick={() => handleDelete(todo.id)}
+                >
+                  Borrar
+                </button>
               </li>
             ))}
           </ul>
