@@ -1,14 +1,14 @@
 // Donde tenemos la información del usuario
-import React from 'react';
+import React, { useContext } from 'react';
+import { UserContext } from './UserContext';
 
 export const HomeScreen = () => {
-  // El router lo implementaremos aquí para que la aplicación sepa que rutas tiene.
-  // Un router sirve para, al crear una SPA, si se quiere navegar a HomeScreen o al
-  // AboutScreen o a LoginScreen, no quiero que haga una petición al servidor y que este
-  // me devuelva todas las páginas nuevamente, porque retornará código y estilos y cosas
-  // que ya tiene el navegador web.
-  // La idea es que unicamente cambie lo que es independiente de esa pantalla, dependiendo
-  // del url del navegador web.
+  // Si aquí necesito acceso al usuario
+  // Esto le dice al useContext que busque la siguiente instancia en el arbol de
+  // componentes que sea del tipo UserContext
+  const userContext = useContext(UserContext);
+
+  console.log(userContext);
 
   return (
     <div>

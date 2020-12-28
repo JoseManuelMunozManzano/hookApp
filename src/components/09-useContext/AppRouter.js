@@ -18,7 +18,9 @@
 // Los 3 componentes HomeScreen, LoginScreen y AboutScreen son como hermanos, están
 // contenidos en el mismo nivel.
 // Por tanto, si un componente generara información que necesito pasársela al HomeScreen,
-// cómo lo hago? Con el context
+// cómo lo hago? Con el context.
+// Se creará un componente que tenga una variable que nos permita distribuírsela a todos
+// sus hijos.
 
 import React from 'react';
 import {
@@ -40,6 +42,13 @@ export const AppRouter = () => {
       <div>
         <NavBar />
 
+        {/* El router lo implementaremos aquí para que la aplicación sepa que rutas tiene.
+            Un router sirve para, al crear una SPA, si se quiere navegar a HomeScreen o al
+            AboutScreen o a LoginScreen, no quiero que haga una petición al servidor y que 
+            este me devuelva todas las páginas nuevamente, porque retornará código y 
+            estilos y cosas que ya tiene el navegador web.
+            La idea es que unicamente cambie lo que es independiente de esa pantalla, 
+            dependiendo del url del navegador web. */}
         <Switch>
           <Route exact path="/" component={HomeScreen} />
 
