@@ -42,27 +42,29 @@ export const AppRouter = () => {
       <div>
         <NavBar />
 
-        {/* El router lo implementaremos aquí para que la aplicación sepa que rutas tiene.
+        <div className="container">
+          {/* El router lo implementaremos aquí para que la aplicación sepa que rutas tiene.
             Un router sirve para, al crear una SPA, si se quiere navegar a HomeScreen o al
             AboutScreen o a LoginScreen, no quiero que haga una petición al servidor y que 
             este me devuelva todas las páginas nuevamente, porque retornará código y 
             estilos y cosas que ya tiene el navegador web.
             La idea es que unicamente cambie lo que es independiente de esa pantalla, 
             dependiendo del url del navegador web. */}
-        <Switch>
-          <Route exact path="/" component={HomeScreen} />
+          <Switch>
+            <Route exact path="/" component={HomeScreen} />
 
-          <Route exact path="/about" component={AboutScreen} />
-          <Route exact path="/login" component={LoginScreen} />
+            <Route exact path="/about" component={AboutScreen} />
+            <Route exact path="/login" component={LoginScreen} />
 
-          {/* Si la ruta es erronea se puede: */}
+            {/* Si la ruta es erronea se puede: */}
 
-          {/* 1. Hacer el default del switch */}
-          {/* <Route component={HomeScreen} /> */}
+            {/* 1. Hacer el default del switch */}
+            {/* <Route component={HomeScreen} /> */}
 
-          {/* 2. Hacer un redirect (recomendado porque la url del navegador queda bien) */}
-          <Redirect to="/" />
-        </Switch>
+            {/* 2. Hacer un redirect (recomendado porque la url del navegador queda bien) */}
+            <Redirect to="/" />
+          </Switch>
+        </div>
       </div>
     </Router>
   );
