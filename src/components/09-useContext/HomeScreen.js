@@ -9,7 +9,7 @@ export const HomeScreen = () => {
   // Aquí uso el user cuyo valor se ha dado en LoginScreen.js
   const { user } = useContext(UserContext);
 
-  console.log(user);
+  //console.log(user);
 
   return (
     <div>
