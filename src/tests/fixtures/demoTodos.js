@@ -11,3 +11,16 @@ export const demoTodos = [
     done: false,
   },
 ];
+
+export const demoTodosToggle = [
+  {
+    id: 1,
+    desc: 'Aprender React',
+    done: true,
+  },
+  {
+    id: 2,
+    desc: 'Aprender Mongo',
+    done: false,
+  },
+];
